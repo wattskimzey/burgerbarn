@@ -12,7 +12,7 @@ router.get("/burgers", function(req, res) {
   // express callback response by calling burger.selectAllBurger
   
     // wrapper for orm.js that using MySQL query callback will return burger_data, render to index with handlebar
-    burger.selectAllBurger(function(data) {
+    burger.all(function(data) {
       var hbsObject = {
         burgers: data
       };
@@ -28,7 +28,7 @@ router.post("/burgers/create", function(req, res) {
   
     // wrapper for orm.js that using MySQL insert callback will return a log to console,
     // render back to index with handle
-    burger.addBurger(req.body.burger_name, function(result) {
+    burger.create(req.body.burger_name, function(result) {
 
       res.redirect("/");
       //res.json({ id: result.insertId });
@@ -46,7 +46,7 @@ router.put("/burgers/:id", function(req, res) {
 
     console.log("burgerID in router.put controller is: " + burgerID);
 
-    burger.updateBurger(burgerID, function(result) {
+    burger.update(burgerID, function(result) {
 
       if (result.changedRows == 0) {
         // If no rows were changed, then the ID must not exist, so 404

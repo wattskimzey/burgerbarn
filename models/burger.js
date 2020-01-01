@@ -4,16 +4,24 @@ var orm = require("../config/orm.js");
 var burger = {
   all: function(cb) {
     
-    // Invoke our orm.all function here
+    orm.all("burgers", function(res) {
+      cb(res);
 
     });
   },
   
   create: function(name, cb) {
-    // invoke orm.create
+    orm.create("burgers", [
+      "burger_name", "devoured"
+    ], [
+      name, false
+    ], cb);
   },
   update: function(id, cb) {
-    // invoke orm.update
+    var condition = "id=" + id;
+    orm.update("burgers", {
+      devoured: true
+    }, condition, cb);
   }
 };
 
