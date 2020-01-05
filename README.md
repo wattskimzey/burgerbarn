@@ -2,7 +2,7 @@
 ![BURGERBARN](https://raw.githubusercontent.com/wattskimzey/burgerbarn/master/images/pburger.gif)
 
 # VIDEO WALK THROUGH
-[Feed your eyeballs](https://drive.google.com/file/d/1FcKW60ed7A71q1VBRqaGl3YeT6kUufaF/view).
+[Feed your eyeballs](https://drive.google.com/file/d/1TrH5qsvlyZBL9FGER_aWs4VAxUCwlaIB/view).
 
 ## Description
 Burgerbarn is supposed to track the burgers you eat - but it sorta kinda does and sorta kinda doesn't.  The database is logging the burgers but the front end isn't.  
